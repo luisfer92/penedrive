@@ -1,0 +1,33 @@
+.text-silver {
+    background-image: linear-gradient( to right, #a5a5a5 0, #bdbdbd 22%, #c7c7c7 45%, #ffffff 50%, #c7c7c7 55%, #bdbdbd 78%, #a5a5a5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+}
+
+.text-sombra {
+    text-shadow: #2A3D4E 1px 1px, #2A3D4E -0px 0px, #2A3D4E -1px 1px, #2A3D4E -2px 2px, #2A3D4E -3px 3px, #2A3D4E -4px 4px, #2A3D4E -5px 5px, #2A3D4E
+}
+
+
+
+.bg-oscuro {
+    background-color: #2d2f2f;
+    background-image: linear-gradient(315deg, #2d2f2f 0%, #424444 74%);
+}
+
+.bg-claro {
+    background: rgb(243, 243, 243);
+    background: linear-gradient(0deg, rgba(244, 243, 243, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(244, 243, 243, 1) 100%);
+}
+
+
+html,body{
+    overflow-x: hidden;
+    
+}
+
+body::-webkit-scrollbar {display: none;}
+
+
