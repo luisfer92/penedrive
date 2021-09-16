@@ -21,9 +21,7 @@ export default function ProductoIndex(params) {
 
     const { productos, categorias } = useProducto();
 
-    const handleOrder = () => {
-        alert("las dao ")
-    }
+    console.log("pintando")
 
     return (
 

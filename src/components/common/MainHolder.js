@@ -7,13 +7,12 @@ import BarraNav from './BarraNav'
 
 export default function MainHolder({ children }) {
 
-    const {currentUser,loggedOut} =useAuth()
+    const {currentUser,loading} =useAuth()
 
-
-
+    
     return (
         <div>  
-            {(!currentUser && loggedOut) && <Redirect to="/login"/>}
+            {(!currentUser && !loading)  && <Redirect to="/login"/>}
             <BarraNav />
             <div style={{marginTop:"50px"}}>
                  {children}

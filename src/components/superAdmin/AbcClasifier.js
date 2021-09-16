@@ -28,27 +28,34 @@ export default (props) => {
 
     return (
         <>
-            <Row  >
-                <Col xs={2} sm={2} lg={12} style={{ maxHeight: "80vh", overflow: "auto" }}>
-                    <Row className="mx-auto py-lg-2  px-md-2 justify-content-md-around border-end border-3 border-info">
+            <Row >
+                <Col xs={12} className="mt-2 bg-oscuro text-warning text-center fs-1">{active}</Col>
+                
+                <Col 
+                    xs={2} 
+                    lg={12} 
+                    style={{ maxHeight: "65vh", overflow: "auto" }}
+                    className="border border-end border-dark border-4"
+                    >
+                    <Row className="py-lg-2 px-0 px-md-2 justify-content-md-around">
                         {generaAlphabet(productos).map(letra => {
                             return (
-                                <Col
-                                    xs={"auto"}
-                                    sm={12}
+                                letra!=active?<Col
+                                    xs={12}
+                                   
                                     lg={"auto"}
                                     onClick={() => setActive(letra)}
-                                    className="my-2 mx-auto text-center mx-lg-2 bg-info px-lg-5 text-white">
+                                    className="my-2 py-2 text-center mx-lg-2 bg-oscuro px-lg-5 text-warning">
 
                                     {letra}
-                                </Col>
+                                </Col>:null
                             )
                         })}
                     </Row>
                 </Col>
-                <Col xs={9} lg={12} style={{ maxHeight: "80vh", overflow: "auto" }}>
+                <Col xs={10} lg={12} style={{ maxHeight: "65vh", overflow: "auto" }}>
 
-                    <Row className="justify-content-center">
+                    <Row className=" justify-content-md-between px-3 px-md-4 bg-claro">
                         {generaProductos(productos, active)}
                     </Row>
 

@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
 
     const [currentUser, setCurrentUser] = React.useState(auth.currentUser);
     const [loggedOut,setLoggedOut]=React.useState(false)
-    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = React.useState(true);
     const {loadProductoContext} = useProducto();
     const [userAPI,setUserApi]=React.useState({})
 
@@ -26,9 +26,11 @@ export function AuthProvider({ children }) {
         currentUser,
         userAPI,
         loggedOut,
+        loading,
         login,
         logout,
         loadUserData
+        
     }
 
     function  loadUserData (usuairo) {
@@ -70,12 +72,16 @@ export function AuthProvider({ children }) {
     }
 
     useEffect(() => {
+        
+        setLoading(true)
+        
         const unsubscribre = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
             user && loadUserData(user)
             user && loadProductoContext()
         })
-        
+        setLoading(false)
+
         return unsubscribre;
     }, [])
 
