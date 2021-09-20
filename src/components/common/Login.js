@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { auth } from '../../firebase';
 import { useProducto } from '../../contexts/ProductoContext'
 
-export default function Login() {
+export default function Login(props) {
 
     const emailRef = useRef();
     const passWordRef = useRef();
@@ -48,12 +48,13 @@ export default function Login() {
     }
 
 
+    
 
-
-
+    const prev=props.location.state && props.location.state.prevPath
+    const redirection=prev?prev:"/"
     return (
         <>
-            {currentUser && <Redirect to="/" />}
+            {currentUser && <Redirect to={redirection} />}
             <Row className="bg-oscuro text-white" style={{ display: "flex",height:"100vh",justifyContent: "center", alignItems: "center" }}>
                 <Col xs={11} md={5} lg={2}>
                 
@@ -78,7 +79,7 @@ export default function Login() {
 
 
 
-                        <Button disable={loading} className="w-100 mt-2 bg-success" type="submit">Login</Button>
+                        <Button disable={loading} className="w-100 mt-2 bg-success" type="submit">Iniciar sesion</Button>
                        
                     </Form>
                

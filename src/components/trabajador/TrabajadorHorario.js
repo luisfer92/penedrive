@@ -10,18 +10,22 @@ export default function UserHorario() {
 
       <div className="d-flex flex-column bg-white pb-2 bg-claro" style={{ borderTopLeftRadius: "25px", borderTopRightRadius: "25px", paddingTop: "30px" }}>
 
-        <Row className="d-flex justify-content-around ">
+        <Row className="justify-content-around ">
+          <Col xs={12}>
+            <Row className="justify-content-around px-4">
+              <Col xs={12} md={4} className="border py-4 mx-2 my-2 sm-m-0 shadow-sm bg-white">
+                <p className="h5 text-center">Hoy</p>
+                <p className="h5 text-center  "> 17:00 - cierre</p>
+              </Col>
 
-          <Col xs={12} sm={"auto"} md={4} className="border py-4 mx-2 sm-m-0 shadow-sm bg-white">
-            <p className="h5 text-center">Hoy</p>
-            <p className="h5 text-center  "> 17:00 - cierre</p>
+
+              <Col xs={12} md={4} className="border py-4 mx-2 my-2 sm-m-0 shadow-sm bg-white">
+                <p className="h5 text-center">Mañana</p>
+                <p className="h5 text-center  "> 17:00 - cierre</p>
+              </Col>
+            </Row>
           </Col>
 
-
-          <Col xs={12} sm={"auto"} md={4} className="border py-4 mx-2 sm-m-0 shadow-sm bg-white">
-            <p className="h5 text-center">Mañana</p>
-            <p className="h5 text-center  "> 17:00 - cierre</p>
-          </Col>
 
           <Col xs={11} >
 
@@ -46,7 +50,7 @@ export default function UserHorario() {
           </Col>
         </Row>
 
-       
+
 
 
 

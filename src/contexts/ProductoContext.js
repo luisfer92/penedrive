@@ -12,6 +12,7 @@ export function useProducto() {
 
 export function ProductoProvider({ children }) {
 
+   
     const [productos, setProductos] = React.useState();
     const [categorias, setCategorias] = React.useState();
 
@@ -26,7 +27,7 @@ export function ProductoProvider({ children }) {
     function loadProducto() {
         const productosRef = database.collection("productos")
         productosRef.get().then(querySnapshot => {
-            console.log('Productos en db: ', querySnapshot.size);
+           
             const lista = []
             querySnapshot.forEach(documentSnapshot => {
                 lista.push({ id: documentSnapshot.id, ...documentSnapshot.data() })
@@ -43,7 +44,7 @@ export function ProductoProvider({ children }) {
         database.collection("categorias_producto").get().then(query => {
             const lista = []
             query.forEach(document => { lista.push({ id: document.id, ...document.data() }) })
-            console.log("Categorigas en bd :" + lista.length)
+            
             setCategorias(lista)
         })
     }
@@ -60,7 +61,7 @@ export function ProductoProvider({ children }) {
                     data = deleteKey ? { categoria_id: undefined } : data
                     return match ? Object.assign({}, producto, data) : producto
                 })
-                console.log(newProductos)
+                
                 setProductos(newProductos)
             })
     }
@@ -86,7 +87,7 @@ export function ProductoProvider({ children }) {
         })
 
         batch.commit().then(()=>{
-            console.log("***")
+            
             let dataProductos=productos.map((producto)=>{
                 const nuevoProducto =nuevosProductos.find((np)=>{return np.id===producto.id})
                 nuevoProducto && console.log(nuevosProductos)

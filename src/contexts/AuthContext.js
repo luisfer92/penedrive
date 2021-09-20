@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
     const [loggedOut,setLoggedOut]=React.useState(false)
     const [loading, setLoading] = React.useState(true);
     const {loadProductoContext} = useProducto();
-    const [userAPI,setUserApi]=React.useState({})
+    const [userAPI,setUserApi]=React.useState()
 
     const value = {
         currentUser,
@@ -37,10 +37,10 @@ export function AuthProvider({ children }) {
         const uid=usuairo.uid
         database.collection("usuarios").doc(uid).get().then(queryResult=>{
             const data=queryResult.data()
-            console.log(data)
+           
             
             queryResult.exists && storage.ref('fotos_perfil/'+uid+".png").getDownloadURL().
-                then((url)=>setUserApi(Object.assign({},data,{profileUrl:url})))
+                then((url)=>setUserApi(Object.assign({},data,{id:uid,profileUrl:url})))
         })
     }
 
@@ -54,6 +54,7 @@ export function AuthProvider({ children }) {
                 // if a user forgets to sign out.
                 // ...
                 // New sign-in will be persisted with session persistence.
+                setLoading(true)
                 return firebase.auth().signInWithEmailAndPassword(email, password);
             })
             .catch((error) => {
@@ -73,17 +74,21 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         
-        setLoading(true)
         
         const unsubscribre = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
             user && loadUserData(user)
             user && loadProductoContext()
         })
-        setLoading(false)
+        
 
         return unsubscribre;
     }, [])
+
+    useEffect(()=>{
+        currentUser && setLoading(false)
+        console.log(userAPI)
+    },[currentUser])
 
 
     return (

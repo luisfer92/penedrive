@@ -3,6 +3,7 @@ import { FaHandHoldingHeart, FaTimes, FaUtensils, FaTint } from 'react-icons/fa'
 import { Button, Row, Col, Dropdown, ButtonGroup } from 'react-bootstrap';
 import limpieza from './limpieza'
 import MainHolder from './common/MainHolder';
+import harinaImg from '../assets/harina.png'
 
 
 const freidoras = [
@@ -22,7 +23,8 @@ const Freidora = (props) => {
     const { numero, fecha, compi } = props
 
     return (
-        <Col className="bg-dark pb-5 pt-2 m-2 mx-lg-5 rounded border border-5 border-warning position-relative shadow" sm={5} xs={10} md={3} lg={2}>
+        <Col className="bg-dark pb-5 pt-2 m-2 mx-lg-5 rounded border border-5 border-warning position-relative shadow" 
+            sm={5} xs={10} md={3} lg={2} >
 
 
             <h1 className="align-items-center justify-content-center rounded-circle border border-3 border-warning text-white mx-auto my-auto d-flex " style={{ width: "64px", height: "64px" }}>{numero}</h1>
@@ -69,11 +71,12 @@ const Harina = (props) => {
     return (
         <Row className="w-100 p-2 mx-auto">
 
-            <Row className="w-100 mx-auto align-items-center bg-white rounded-3 py-4 " >
+            <Row className="w-100 mx-auto align-items-center bg-claro rounded-3 py-4 " >
                 <p className="ps-4 h5 "> Harina</p>
                 <Col xs={"auto"} sm="auto" md={4} className="d-none d-sm-flex h-100 align-items-center rounded" >
-                    <div className="border border-3 border-warning rounded-circle bg-dark d-flex  mx-auto align-items-center justify-content-center shadow-lg" style={{ width: "128px", height: "128px" }}>
-                        <FaHandHoldingHeart fontSize="50px" />
+                    <div className=" d-flex  mx-auto align-items-center justify-content-center ">
+                    <img src={harinaImg} className="border border-3 border-dark rounded-circle bg-warning shadow-lg" style={{width:"200px"}}/>
+
                     </div>
                 </Col>
 
@@ -96,7 +99,7 @@ const CategoriaLimpiezaItem = (props) => {
     return (
         <Col xs={12} sm={12} className="mb-2 px-2" >
             <Row className={`bg-warning text-dark mx-auto w-100 rounded rounded-3 p-0  border border-2 border-warning`} >
-                <Col xs={active ? 11 : 12} sm={!active ? 12 : 11} className="text-center fs-4" onClick={() => setActive(!active)}>
+                <Col xs={active ? 10 : 12} sm={!active ? 12 : 11} className="text-center fs-4" onClick={() => setActive(!active)}>
                     {nombre}
                 </Col>
                 {active &&

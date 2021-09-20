@@ -9,6 +9,7 @@ import MainHolder from './common/MainHolder';
 import AgregarProducto from './superAdmin/OrganizadorProductos';
 import AbcClasifier from './superAdmin/AbcClasifier';
 import PrecioClasifier from './superAdmin/PrecioCalisifier'
+import { Link } from 'react-router-dom';
 
 
 
@@ -21,7 +22,7 @@ export default function ProductoIndex(params) {
 
     const { productos, categorias } = useProducto();
 
-    console.log("pintando")
+   
 
     return (
 
@@ -50,7 +51,7 @@ export default function ProductoIndex(params) {
                         <p className="text-sm text-center">Productos</p>
                     </Col>
 
-                    <Col xs={5} sm={5} md={2} className="bg-dark rounded shadow pt-1 px-3 pb-2 m-2 text-white " >
+                    <Col as={Link} to="/productos/nuevo" xs={5} sm={5} md={2} className="nounderline bg-dark rounded shadow pt-1 px-3 pb-2 m-2 text-white " >
                         <p className="text-end"><FaDatabase /></p>
                         <h4 className="text-white text-center"><FaPlus /></h4>
                         <p className="text-sm text-center">Nuevo</p>

@@ -24,7 +24,7 @@ const BottomBar = (props) => {
                 <Col
                     className="rounded border border-white p-2 m-2 shadow-lg fs-5 position-relative bg-oscuro"
                     as={Link}
-                    to={`productos/${id}`}
+                    to={`productos/editar/${id}`}
                 >
                     <FaEdit className="text-white" />
                 </Col>
@@ -46,7 +46,7 @@ const Categoria = (props) => {
 
     return (
         <Col xs={12}>
-            <h4 className="text-center w-100 my-auto">{nombre}</h4>
+            <h4 className="text-center w-100 my-auto text-white py-4 mt-2 border-top border-2 border-white">{nombre}</h4>
         </Col>
     )
 }
@@ -85,7 +85,7 @@ export default (props) => {
     const { expand = false, editable = false } = props
     return (
         <Col className="bg-oscuro text-white my-2  m-sm-2 text-center  shadow-lg rounded rounded-3 "
-            xs={12} sm={expand ? 12 : 5} lg={expand ? 12 : 3} >
+            xs={11} sm={expand ? 12 : 5} lg={expand ? 12 : 3} >
 
             <Row className="align-items-end h-100">
                 {editable && <IDProducto id={id} />}
