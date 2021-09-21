@@ -31,7 +31,7 @@ export default function UserHorario() {
 
             <h5 className="mt-4 mb-2">Esta semana:</h5>
 
-            <Row className="d-flex justify-content-around">
+            <Row className="d-flex justify-content-around justify-content-xl-start" xl={7}>
 
               <TrabajadorDia nombre="lunes" turnos={["17:00 - cierre"]} />
               <TrabajadorDia nombre="martes" libre={true} />

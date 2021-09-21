@@ -12,6 +12,11 @@ import ProfilePic from './ProfilePic'
 
 const menuAdmin = [
     {
+        nombre: "Cambiar local",
+        url: "/local/selector"
+
+    },
+    {
         nombre: "Productos",
         url: "/productos"
 
@@ -28,6 +33,7 @@ const menuAdmin = [
 
     },
 
+
 ]
 
 
@@ -40,7 +46,9 @@ export default function BarraNav() {
     const handleShow = () => setShow(true);
 
     const { logout, currentUser } = useAuth();
-
+    const {location}=useHistory()
+   
+    
 
     async function handleLogut() {
 
@@ -84,28 +92,31 @@ export default function BarraNav() {
                     </Offcanvas.Title>
                 </Offcanvas.Header>
 
-                <Row className="shadow-lg py-3 bg-dark rounded-3 justify-content-around mt-2 border border-4 border-white">
-                    <Col xs={1} sm={1}  className="justify-content-center border-right border-info">
+                <Row className="shadow-lg py-1 bg-dark rounded-3 justify-content-around mt-2 border border-4 border-white">
+                    <Col xs={3}  className="bg-info d-flex p-0 justify-content-center border-right border-info">
                         <ProfilePic size={64} />
                     </Col>
-                    <Col xs={10} sm={10} md={8} className="align-items-center d-flex">
+                    <Col  className="align-items-center d-flex bg-warning">
                         <p className="text-center text-white w-100 fs-5  my-auto">{userAPI && userAPI.correo}</p>
+
                     </Col>
+                    
+
                 </Row>
 
                 <Offcanvas.Body>
 
-                    <div className="w-100 h-100 position-relative d-flex">
-
-                        <ListGroup variant="flush" className="w-100">
+                    <Row className="">
+                        <ListGroup variant="flush" className="w-100 bg-info p-0" style={{minHeight:"80%"}}>
 
 
 
                             {
                                 menuAdmin.map((item) => {
                                     const { url, nombre } = item
+                                    const active=location.pathname===url
                                     return (
-                                        <ListGroup.Item action as={Link} to={url} className="my-2">
+                                        <ListGroup.Item action as={!active && Link} to={url} className={`my-2 ${ active && "active"}`}>
                                             {nombre}
                                         </ListGroup.Item>
                                     )
@@ -117,8 +128,11 @@ export default function BarraNav() {
 
 
                         </ListGroup>
+                    </Row>
 
-                        <ListGroup variant="flush" className="position-absolute w-100" style={{ bottom: "0" }}>
+                    <Row>    
+
+                        <ListGroup variant="flush" className=" w-100" style={{ bottom: "0" }}>
                             <ListGroup.Item action >
                                 <FaAdjust className="me-2" /> Ajustes
                             </ListGroup.Item>
@@ -126,7 +140,7 @@ export default function BarraNav() {
                                 <FaArrowAltCircleLeft className="me-2" /> Cerrar session
                             </ListGroup.Item>
                         </ListGroup>
-                    </div>
+                    </Row>
                 </Offcanvas.Body>
             </Offcanvas>
 
