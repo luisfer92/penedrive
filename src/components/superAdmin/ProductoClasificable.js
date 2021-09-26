@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, InputGroup, Row, Dropdown, Spinner } from 'react-bootstrap';
-import { FaBug, FaEdit, FaEuroSign, FaExclamationTriangle, FaFingerprint } from 'react-icons/fa';
+import { FaBug, FaBullhorn, FaEdit, FaEuroSign, FaExclamationTriangle, FaFingerprint } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useProducto } from '../../contexts/ProductoContext';
 
@@ -12,8 +12,11 @@ const BottomBar = (props) => {
         <Col xs={12}>
             <Row className="bg-warning ">
 
-                <Col className="rounded border border-white p-2 m-2 shadow-lg fs-5 position-relative bg-oscuro">
-                    <FaExclamationTriangle />
+                <Col
+                    as={Link}
+                    to={`local/alarmas/productos/${id}`}
+                    className="rounded border border-white p-2 m-2 shadow-lg fs-5 position-relative bg-oscuro">
+                    <FaBullhorn className="text-white"/>
                     <span class="badge badge-light position-absolute text-warning" style={{ top: "0", right: "0" }}>4</span>
                 </Col>
 

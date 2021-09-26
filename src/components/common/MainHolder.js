@@ -15,6 +15,9 @@ const LoadingCortine = () => {
     const [outOfTime, setOutOfTime] = useState()
     const history = useHistory()
 
+
+    
+
     useEffect(() => {
         setTimer(setTimeout(() => { setOutOfTime(true) }, 5000))
         return clearTimeout(time)
@@ -71,13 +74,13 @@ export default function MainHolder({ children }) {
     const history = useHistory()
     const location = history.location
     
-
+    console.log(userAPI)
     return (
-        <div className="position-relative vh-100 vw-100" >
+        <div className="position-relative vh-100 vw-100 bg-claro-oscuro" style={{overflowY:"scroll"}} >
             {(!currentUser && !loading) && <Redirect to={{ pathname: '/login', state: { prevPath: location.pathname } }} />}
             {(userAPI && !local)&& <Redirect  to={{ pathname: '/local/selector', state: { prevPath: location.pathname } }} />}
             <BarraNav />
-            <div style={{ marginTop: "50px" }}>
+            <div className="main-holder" style={{ width:"100%",height:"90vh",margin:"0" }}>
                 {children}
             </div>
             {loading && <LoadingCortine />}

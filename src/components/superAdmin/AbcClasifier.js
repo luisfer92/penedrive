@@ -34,7 +34,7 @@ export default (props) => {
                 <Col 
                     xs={2} 
                     lg={12} 
-                    style={{ maxHeight: "65vh", overflow: "auto" }}
+                    style={{ maxHeight: "85vh", overflow: "auto" }}
                     className="border border-end border-dark border-4"
                     >
                     <Row className="py-lg-2 px-0 px-md-2 justify-content-md-around">
@@ -53,7 +53,7 @@ export default (props) => {
                         })}
                     </Row>
                 </Col>
-                <Col xs={10} lg={12} style={{ maxHeight: "65vh", overflow: "auto" }}>
+                <Col xs={10} lg={12} style={{ maxHeight: "85vh", overflow: "auto" }}>
 
                     <Row className=" justify-content-md-between px-3 px-md-4 bg-claro">
                         {generaProductos(productos, active)}

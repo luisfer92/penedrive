@@ -70,7 +70,7 @@ export default function CategoriaClasifier(props) {
     return (
         <>
 
-            <Row className="d-flex justify-content-center boder bg-oscuro mt-2" style={{ maxHeight: "76vh", overflowY: "auto" }}>
+            <Row className="d-flex justify-content-center boder bg-oscuro mt-2 mx-auto" style={{ maxHeight: "76vh", overflowY: "auto" }}>
 
 
                 {categorias && categorias.map((c) => {

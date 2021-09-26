@@ -81,7 +81,7 @@ const CategoriaEdicion = (props) => {
 
     return (
 
-        <Col sm={12} lg={12} xl={6} className={`${active ? "border" : "border-top"} border-white border-3 rounded rounded-2 px-0 mb-sm-2 h-auto my-2`}>
+        <Col sm={12} lg={12} xl={6} className={`${active ? "border" : "border-top"} border-white border-3 rounded rounded-2 px-2 mb-sm-2 h-auto my-2`}>
 
             <Col xs={12} className={`${!active ? "border border-3" : "border-bottom"} border-white fs-3 d-flex py-auto justify-content-center  text-white`} onClick={() => setActive(!active)}>
                 <span className="me-2 text-capitalize">{nombre}</span>
@@ -169,15 +169,15 @@ const Editor = (props) => {
 
     return (
         <SecondaryHolder title={"Editar - "+nombre} back="/productos">
-            <Row className="justify-content-center justify-content-lg-around  align-items-center pt-2" >
+            <Row className="justify-content-center justify-content-lg-around mx-auto w-100 align-items-center pt-2" >
 
                 
                 <Col xs={12} md={8} lg={4} xl={3} className="d-flex  justify-content-center align-items-center ">
                     {productos && <Producto {...current} editable={true} expand={true} />}
                 </Col>
 
-                <Col md={12} lg={7} xl={8} className="bg-oscuro text-white py-2" >
-                    <Form as={Row} className="px-4 justify-content-around">
+                <Col md={12} lg={7} xl={8} className=" text-white py-2 px-0" >
+                    <Form as={Row} className="bg-oscuro justify-content-around">
 
 
 

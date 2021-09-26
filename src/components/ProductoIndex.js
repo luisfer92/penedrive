@@ -27,18 +27,18 @@ export default function ProductoIndex(params) {
     return (
 
         <MainHolder>
-            <div className="w-100">
+            <div className="w-100 mx-auto">
                 <h2 className="px-2 mt-2"> Productos </h2>
 
-                <Row className="px-4" style={{ justifyContent: "space-around" }}>
+                <Row className="px-4    mx-auto" style={{ justifyContent: "space-around" }}>
 
-                    <Col xs={5} md={2} className="bg-warning rounded shadow pt-1 px-3 pb-2 m-2 text-white " >
+                    <Col xs={5} md={2} className="bg-amarillo rounded shadow pt-1 px-3 pb-2 m-2 text-dark " >
                         <p className="text-end"><FaShoppingCart /></p>
-                        <h4 className="text-white text-center">1</h4>
+                        <h4 className="text-center">1</h4>
                         <p className="text-sm text-center">Prestamos</p>
                     </Col>
 
-                    <Col xs={5} sm={5} md={2} className="bg-info rounded shadow pt-1 px-3 pb-2 m-2 text-white " >
+                    <Col xs={5} sm={5} md={2} className="bg-azul rounded shadow pt-1 px-3 pb-2 m-2 text-white " >
                         <p className="text-end"><FaShoppingCart /></p>
                         <h4 className="text-white text-center">1</h4>
                         <p className="text-sm text-center">Deudas</p>
@@ -68,7 +68,7 @@ export default function ProductoIndex(params) {
 
 
 
-            <div className="bg-oscuro" >
+            <div className="bg-oscuro mx-auto" >
 
                 <Form className="text-white py-3 w-100 d-flex justify-content-center">
 
@@ -101,13 +101,13 @@ export default function ProductoIndex(params) {
 
 
 
-                <div className=" bg-claro pb-2 shadow  " style={{ borderTopLeftRadius: "25px", borderTopRightRadius: "25px", paddingTop: "30px", minHeight: "50vh" }}>
+                <div className=" bg-claro pb-2 shadow mx-auto " style={{ borderTopLeftRadius: "25px", borderTopRightRadius: "25px", paddingTop: "30px", minHeight: "50vh" }}>
 
-                    <Form.Group as={Row} className="px-2 justify-content-end" >
+                    <Form.Group as={Row} className="px-2 justify-content-end mx-auto" >
                         <Form.Label as={Col} className="text-end h-100 my-auto ">Orden:</Form.Label>
 
                         <Dropdown as={Col} className="col-auto">
-                            <Dropdown.Toggle variant="success">
+                            <Dropdown.Toggle className="bg-verde text-dark border border-dark">
                                 {order}
                             </Dropdown.Toggle>
 

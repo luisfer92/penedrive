@@ -10,16 +10,16 @@ export default (props)=>{
     const {children,title,back}=props
     return (
         <MainHolder>
-            <Row className=" ps-3 py-2" >
+            <Row className=" ps-3 py-2 mx-auto" >
                 <Col xs={2} sm={1} as={Link} to={back} className="bg-dark text-warning justify-content-center rounded rounded-4 py-3 d-flex">
                     <FaAngleLeft size="35" />
 
                 </Col>
-                <Col className="d-flex  my-auto">
+                <Col className="d-flex  my-auto  mx-auto">
                     <h4 className="my-auto">{title}</h4>
                 </Col>
             </Row>
-            <Row className="vh-100 justify-content-center">
+            <Row className="vh-100 justify-content-center mx-auto">
                 {children}
             </Row>
 

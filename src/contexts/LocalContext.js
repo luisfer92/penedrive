@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react'
 import { database } from '../firebase'
 import { useAuth } from './AuthContext';
+import { CompisProvider } from './CompisContext';
+import { MaquinariaProvider } from './MaquinariaContext';
+import { MessageProvider } from './MessageContext'
+import { TrabajadorProvider } from './TrabajadorContext';
 
 const LocalContext = React.createContext();
 
@@ -13,57 +17,70 @@ export function useLocal() {
 
 export function LocalProvider({ children }) {
 
-    const {userAPI} =useAuth()
-    const [locales,setLocales]=React.useState()
-    const [local, setLocal] = React.useState();
+    const { userAPI } = useAuth()
+    const [locales, setLocales] = React.useState()
+    const [local, setLocal] = React.useState(null);
     const [categorias, setCategorias] = React.useState();
 
     const value = {
         local,
         locales,
+        abandonarLocal: () => { setLocal(null) },
         setLocal,
-        setLocales        
+        setLocales
     }
 
-    useEffect(()=>{
-        let unsubscribre=null
-        if(local){
-            unsubscribre=database.
+    useEffect(() => {
+        let unsubscribre = null
+        if (local) {
+            unsubscribre = database.
                 collection('locales').
                 doc(local.id).
                 onSnapshot(
-                    snap=>{
-                        setLocal({id:snap.id,...snap.data()})
+                    snap => {
+                        setLocal({ id: snap.id, ...snap.data() })
                     }
                 )
         }
-        return unsubscribre?()=>unsubscribre():null
-    },[setLocal])
+        return unsubscribre ? () => unsubscribre() : null
+    }, [setLocal])
 
 
-    useEffect(()=>{
-        if(userAPI){
-            
-            const load=[]
+    useEffect(() => {
+        if (userAPI) {
+
+            const load = []
             database.collection("locales").
-            where('allowed_users','array-contains',userAPI.id).
-            get().then((query)=>{
-                query.forEach(doc=>{
-                    load.push({id:doc.id,...doc.data()})
+                where('allowed_users', 'array-contains', userAPI.correo).
+                get().then((query) => {
+                    query.forEach(doc => {
+                        load.push({ id: doc.id, ...doc.data() })
+                    })
+                    const size = load.length
+                    console.log(size)
+                    setLocales(load)
+                    size == 1 && setLocal(load[0])
                 })
-                const size=load.length
-                setLocales(load)
-                //size >1 && setLocales(load)
-                size ===1 && setLocal(load[0])
-            })
-            
-        }
-    },[userAPI])
 
-   
+        }
+    }, [userAPI])
+
+
     return (
         <LocalContext.Provider value={value}>
-            {children}
+            <MaquinariaProvider>
+                <CompisProvider>
+                    <TrabajadorProvider>
+                        <MessageProvider>
+                            {children}
+                        </MessageProvider>
+                    </TrabajadorProvider>
+
+                </CompisProvider>
+            </MaquinariaProvider>
+
+
+
         </LocalContext.Provider>
     )
 }

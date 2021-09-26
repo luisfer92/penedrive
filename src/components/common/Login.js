@@ -67,7 +67,7 @@ export default function Login(props) {
                             <Form.Label className="textoPrimario">
                                 Email
                         </Form.Label>
-                            <Form.Control type="email" ref={emailRef} required value={"luisfer_rey@yahoo.es"} />
+                            <Form.Control type="email" ref={emailRef} required  />
                         </Form.Group>
 
                         <Form.Group className="mb-2">

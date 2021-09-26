@@ -10,24 +10,120 @@
     text-shadow: #2A3D4E 1px 1px, #2A3D4E -0px 0px, #2A3D4E -1px 1px, #2A3D4E -2px 2px, #2A3D4E -3px 3px, #2A3D4E -4px 4px, #2A3D4E -5px 5px, #2A3D4E
 }
 
+html, body {
+    overflow-x: hidden;
+}
 
+body::-webkit-scrollbar {
+    display: none;
+}
 
-.bg-oscuro {
-    background-color: #2d2f2f;
-    background-image: linear-gradient(315deg, #2d2f2f 0%, #424444 74%);
+.bocadillo {
+    position: relative;
+    border-radius: 21px;
+    background: rgb(243, 243, 243);
+    padding-left: 1rem;
+    min-height: 42px;
+}
+
+.bocadillo:before {
+    border: 10px solid white;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: calc(50% - 10px);
+    right: -20px;
+    transform: rotate(-90deg);
+}
+
+.main-holder{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.bocadillo-me {
+    position: relative;
+    border-radius: 21px;
+    background: rgb(243, 243, 243);
+    padding-left: 1rem;
+    min-height: 42px;
+}
+
+.bocadillo-me:before {
+    border: 10px solid white;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: calc(50% - 10px);
+    left: -20px;
+    transform: rotate(90deg);
+}
+
+:root {
+    --azul: #6490F3;
+    --azul-1: #F3F7FE;
+    --azul-2: #9FB9F6;
+    --azul-3: #2E6AF3;
+    --azul-4: #034BF1;
+    --verde: #55F760;
+    --verde-1: #F2FFF3;
+    --verde-2: #97F99D;
+    --verde-3: #18F727;
+    --verde-4: #00F610;
+    --amarillo: #FFC758;
+    --amarillo-1: #FFFBF3;
+    --amarillo-2: #FFDD9A;
+    --amarillo: #FFB219;
+    --amarillo-4: #FFAA00;
+    --rojo-0: #BA1B5E;
+    --rojo-1: #8A2E55;
+    --rojo: #882B52;
+    --rojo-3: #DE0661;
+    --rojo-4: #DF005E;
+    
+    --claro-2: #757575;
+    --claro-1: #F4F0FE;
+    --claro: #FFFFFF;
+    --oscuro: #0A0811;
+    --oscuro-1: #464646;
 }
 
 .bg-claro {
-    background: rgb(243, 243, 243);
-    background: linear-gradient(0deg, rgba(244, 243, 243, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(244, 243, 243, 1) 100%);
+    background-color: var(--claro);
 }
 
-
-html,body{
-    overflow-x: hidden;
-    
+.bg-claro-oscuro {
+    background-color: var(--claro-2);
 }
 
-body::-webkit-scrollbar {display: none;}
+.bg-oscuro-claro {
+    background-color: var(--oscuro-claro);
+}
 
+.bg-oscuro {
+    background-color: var(--oscuro);
+}
 
+.bg-amarillo {
+    background-color: var(--amarillo);
+}
+
+.bg-verde {
+    background-color: var(--verde);
+}
+
+.bg-azul {
+    background-color: var(--azul);
+}
+
+.text-amarillo {
+    color: var(--amarillo);
+}
+
+.border-amarillo {
+    border-color: var(--amarillo) !important;
+}

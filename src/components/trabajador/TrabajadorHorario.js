@@ -8,9 +8,9 @@ export default function UserHorario() {
     <div className="w-100 bg-oscuro border pb-2">
       <h4 className="text-white p-4">Horario</h4>
 
-      <div className="d-flex flex-column bg-white pb-2 bg-claro" style={{ borderTopLeftRadius: "25px", borderTopRightRadius: "25px", paddingTop: "30px" }}>
+      <div className="d-flex flex-column bg-claro pb-2" style={{ borderTopLeftRadius: "25px", borderTopRightRadius: "25px", paddingTop: "30px" }}>
 
-        <Row className="justify-content-around ">
+        <Row className="justify-content-around mx-auto w-100">
           <Col xs={12}>
             <Row className="justify-content-around px-4">
               <Col xs={12} md={4} className="border py-4 mx-2 my-2 sm-m-0 shadow-sm bg-white">

@@ -4,8 +4,8 @@ import { Col, ListGroup, Row, Accordion, Container } from 'react-bootstrap'
 export default function Dia(props) {
 
     const { nombre, turnos, libre = false,euro=false } = props
-    const bgColor = libre ? "bg-success" : "bg-oscuro"
-    const textColor=euro?"text-warning":"text-white"
+    const bgColor = libre ? "bg-verde" : "bg-oscuro"
+    const textColor=euro?"text-warning":libre?"text-dark":"text-white"
     return (
         <Col  sm={5} lg={3} xxl className={`p-3 h-100 ${bgColor} m-2 rounded shadow-lg ${textColor} mx-xl-2 d-xl-flex align-items-end`}>
             <Row className=" h-100 w-100 mx-auto">
