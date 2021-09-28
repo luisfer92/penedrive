@@ -28,32 +28,36 @@ export default (props) => {
 
     return (
         <>
-            <Row >
-                <Col xs={12} className="mt-2 bg-oscuro text-warning text-center fs-1">{active}</Col>
+              <Row className=" boder bg-oscuro px-0 mt-2 mx-auto " style={{height:"65vh",overflowY:"scroll"}}>
+                <Col xs={12} className="d-lg-none mt-2 bg-oscuro text-warning text-center fs-1 shadow border-bottom border-white">
+                    {active}
+                    </Col>
                 
                 <Col 
                     xs={2} 
                     lg={12} 
-                    style={{ maxHeight: "85vh", overflow: "auto" }}
+                    style={{ maxHeight: "100%", overflow: "scroll" }}
                     className="border border-end border-dark border-4"
                     >
                     <Row className="py-lg-2 px-0 px-md-2 justify-content-md-around">
                         {generaAlphabet(productos).map(letra => {
                             return (
-                                letra!=active?<Col
+                                (letra!=active)&&
+                                <Col
                                     xs={12}
-                                   
                                     lg={"auto"}
                                     onClick={() => setActive(letra)}
-                                    className="my-2 py-2 text-center mx-lg-2 bg-oscuro px-lg-5 text-warning">
+                                    className="my-2 py-2 text-center mx-lg-2 bg-oscuro px-lg-5 text-warning"
+                                >
 
                                     {letra}
-                                </Col>:null
+                                </Col>
                             )
                         })}
                     </Row>
+                    <Col xs={12} className="d-none d-lg-block sticky-top mt-2 bg-oscuro text-warning text-center fs-1">{active}</Col>
                 </Col>
-                <Col xs={10} lg={12} style={{ maxHeight: "85vh", overflow: "auto" }}>
+                <Col xs={10} lg={12} style={{ maxHeight: "", overflow: "auto" }}>
 
                     <Row className=" justify-content-md-between px-3 px-md-4 bg-claro">
                         {generaProductos(productos, active)}

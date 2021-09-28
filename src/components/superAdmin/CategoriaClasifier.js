@@ -14,7 +14,7 @@ const Categoria = (props) => {
 
 
     return (
-        <Accordion className="p-2 acordion-flush" >
+        <Accordion className="p-1 acordion-flush my-2" >
             <Accordion.Item eventKey="0" >
                 <Accordion.Header as="h5">
 
@@ -68,24 +68,24 @@ export default function CategoriaClasifier(props) {
 
 
     return (
-        <>
+    
 
-            <Row className="d-flex justify-content-center boder bg-oscuro mt-2 mx-auto" style={{ maxHeight: "76vh", overflowY: "auto" }}>
+            <Row className="boder bg-oscuro px-0 mt-2 mx-auto" style={{height:"65vh",overflowY:"scroll"}}>
 
 
                 {categorias && categorias.map((c) => {
                     const prodXcat = productos.filter((p) => p.categoria_id === c.id)
                     return (
-                        <Col xs={12} sm={12} >
+                        <Col xs={12} >
                             <Categoria handleEditar={handleEditar} categoria={c} productos={prodXcat} />
                         </Col>)
                 })}
             </Row>
-            <AgregarProducto show={show} setShow={setShow} categoria={categoriaActiva} />{/*modal*/}
+          
 
 
 
-        </>
+        
 
 
 

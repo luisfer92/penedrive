@@ -21,6 +21,7 @@ import AlarmSender from './components/common/AlarmSender';
 import MaquinariaCreator from './components/superAdmin/MaquinariaCreator';
 import { MaquinariaProvider } from './contexts/MaquinariaContext';
 import PlantillaCreator from './admin/PlantillaCreator';
+import HorarioCreator from './admin/horario/HorarioCreator';
 
 const history = createHistory();
 function App() {
@@ -45,11 +46,12 @@ function App() {
                   <Route exact path="/local/selector" component={LocalSelector} />
                   <Route exact path="/local/mensajes/" component={Messenger} />
                   <Route path="/local/alarmas/:topic/:ref" component={AlarmSender} />
-                  <Route paht="/local/plantilla/nuevo/" component={PlantillaCreator}/>
+                  <Route exact path="/plantilla/nuevo/" component={PlantillaCreator}/>
                   <Route exact path="/productos" component={ProductoIndex} />
                   <Route exact path="/productos/nuevo" component={ProductoCreator} />
                   <Route path="/productos/editar/:id" component={ProductoEditor} />
                   <Route exact path="/maquinaria/nuevo" component={MaquinariaCreator} />
+                  <Route exact path="/horarios/nuevo" component={HorarioCreator}/>
                   <Route exatt path="/operativa" component={Operativa} />
                   <Route path="*" component={NotFoundPage} />
 

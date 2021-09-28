@@ -29,22 +29,22 @@ const FormularioMaquina = (props) => {
     },[selected])
 
     return (
-        <Form as={Row} className="w-100 mx-auto align-items-center text-white align-items-start justify-content-center h-100 py-2 px-0">
+        <Form as={Row} className="w-100 mx-auto align-items-center text-white  justify-content-center h-100  px-0">
             
-            <Row className="w-100 h-25  mb-2 py-2  mx-auto">
-                <Col xs={4} className="bg-warning shadow h-100 d-flex">
-                    <img src={selected.pic} className="h-75 w-100  my-auto" />
+            <Row className="mx-2 h-25 py-4 mx-auto border border-white shadow">
+                <Col xs={4} sm={2} className="bg-warning shadow h-100 d-flex">
+                    <img src={selected.pic} className="my-auto w-100 h-100  my-auto" />
                 </Col>
-                <Col xs={8} className="px-0 d-flex flex-column">
+                <Col  className="px-0 d-flex flex-column py-2">
                     <h3 className="m-0 ms-2 text-white">{alias}</h3>
-                    <p className="text-end m-0 pe-3 text-amarillo">({marca ? marca : "marca"}-{modelo ? modelo : "modelo"})</p>
+                    <p className="text-end m-0 pe-2 text-amarillo">({marca ? marca : "marca"}-{modelo ? modelo : "modelo"})</p>
                     <h3 className="text-center my-auto text-white"><span className="text-amarillo"> <FaBolt size={30} /> </span>{consumo ? consumo : "00"} Kw/h </h3>
 
 
                 </Col>
 
             </Row>
-            <Row className="h-75 bg-oscuro">
+            <Row className="bg-oscuro my-auto py-3">
 
                 <Form.Group as={Col} xs={4} className="py-2">
                     <Form.Label>
@@ -84,7 +84,7 @@ const FormularioMaquina = (props) => {
                         <option>Selecciona tecnico</option>
                     </Form.Select>
                 </Form.Group>
-                <Button variant="warning p-0 m-0 text-dark" onClick={handleNuevaMaquina}>Agregar</Button>
+                <Button variant="warning my-2 mx-0 text-dark" onClick={handleNuevaMaquina}>Agregar</Button>
             </Row>
 
         </Form>
@@ -95,10 +95,10 @@ const FormularioMaquina = (props) => {
 const MaquinaLocal = (props) => {
     const {nombre,pic,numero,marca,modelo,consumo,status,alias}=props
     return (
-        <Row className="shadow bg-oscuro p-0 mx-auto my-2  text-white border border-2 border-amarillo">
+        <Row className="shadow bg-oscuro p-0 mx-auto my-2 my-lg-4  text-white border border-2 border-amarillo">
 
-            <Col as="img" xs={4} md={2} lg={1} src={pic} className="p-2  h-75 my-auto" />
-            <Col className=" px-0 d-block border-start border-amarillo">
+            <Col as="img" xs={4}  src={pic} className="p-2  h-75 my-auto" />
+            <Col xs={8} className=" px-0 d-block border-start border-amarillo">
                 <p className="ps-3 m-0 fs-4 d-block">{alias?alias:nombre} {`-${numero}-`}</p>
                 <p className="text-end pe-1 m-0 border-bottom border-amarillo ">{marca}-{modelo}</p>
                 <p className="text-center fs-4 my-4"><span className="text-amarillo me-2 fs-2"><FaBolt /></span>{consumo} kw/h</p>
@@ -107,7 +107,7 @@ const MaquinaLocal = (props) => {
             <Col xs={12} className="p-0">
                 <Row className="justify-content-end mx-auto w-100">
 
-                    <Col xs={4} md={2} lg={1} className="d-flex justify-content-center align-items-center">
+                    <Col xs={4} className="d-flex justify-content-center align-items-center">
                         Status:
                          <div className={`bg-${status} my-auto ms-2 rounded-circle border boder-white border-2`} style={{ width: "20px", height: "20px" }} />
                     </Col>
@@ -137,7 +137,7 @@ export default (props) => {
 
                     <h5 className="text-white  w-100 my-auto ps-3">Maquinaria {local?.nombre}</h5>
 
-                    <Col xs={12} lg={6} className="bg-claro px-0 py-2 my-auto" style={{ height: "80%", overflowY: "scroll" }}>
+                    <Col xs={12} sm={10} lg={9} className="px-lg-5 bg-claro px-0 py-2 my-auto" style={{ height: "80%", overflowY: "scroll" }}>
                         {maquinas && maquinas.map(m => <MaquinaLocal {...m} />)}
                     </Col>
 

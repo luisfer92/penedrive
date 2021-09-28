@@ -4,6 +4,7 @@ import { useAuth } from './AuthContext';
 import { CompisProvider } from './CompisContext';
 import { MaquinariaProvider } from './MaquinariaContext';
 import { MessageProvider } from './MessageContext'
+import { TecnicosProvider } from './TenicosContext';
 import { TrabajadorProvider } from './TrabajadorContext';
 
 const LocalContext = React.createContext();
@@ -68,16 +69,26 @@ export function LocalProvider({ children }) {
 
     return (
         <LocalContext.Provider value={value}>
-            <MaquinariaProvider>
-                <CompisProvider>
-                    <TrabajadorProvider>
-                        <MessageProvider>
-                            {children}
-                        </MessageProvider>
-                    </TrabajadorProvider>
+            <TecnicosProvider>
 
-                </CompisProvider>
-            </MaquinariaProvider>
+                <MaquinariaProvider>
+
+                    <CompisProvider>
+
+                        <TrabajadorProvider>
+
+                            <MessageProvider>
+                                {children}
+                            </MessageProvider>
+
+                        </TrabajadorProvider>
+
+                    </CompisProvider>
+                    
+                </MaquinariaProvider>
+
+            </TecnicosProvider>
+
 
 
 

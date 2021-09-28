@@ -30,7 +30,7 @@ const menuAdmin = [
 
     {
         nombre: "Horarios",
-        url: "/"
+        url: "/horarios/nuevo"
 
     },
     {
@@ -40,8 +40,9 @@ const menuAdmin = [
     },
     {
         nombre:"Plantilla",
-        url:"/local/plantilla/nuevo"
+        url:"/plantilla/nuevo"
     },
+
 
 
 ]
@@ -76,7 +77,7 @@ export default function BarraNav() {
         <>
 
             <Row className="sticky-top bg-oscuro text-white mx-auto border-bottom border-white border-2 shadow" style={{ width: "100%", height: "10vh" }}>
-                <Col className="my-auto d-flex justify-content-start p-0 ">
+                <Col className="my-auto d-flex justify-content-start p-0 ps-2">
                     <Link to="/">
 
                         <img
@@ -96,7 +97,7 @@ export default function BarraNav() {
                     {local?.nombre}
                 </Col>
 
-                <Col className="my-auto d-flex justify-content-end">
+                <Col className="my-auto d-flex justify-content-end pe-3">
 
                     {mensajes && <Link to="/local/mensajes"> <FaBell size="30" className=" p-1 me-2 text-amarillo" /></Link>}
                     <FaBars size="30" className="border p-1" onClick={handleShow} />

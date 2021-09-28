@@ -25,7 +25,7 @@ export default function UserProfile(props) {
 
        
             <Row className="p-2 mx-auto" style={{ justifyContent: "center"}}>
-                <Col xs={11} sm={8}  md={3} lg={4}  className="bg-oscuro border  py-4 rounded rounded-4 shadow-lg" md={6}>
+                <Col xs={10} sm={8}  md={3} lg={4}  className="bg-oscuro border  py-4 rounded rounded-4 shadow-lg" md={6}>
                     <div className="d-flex text-white px-2" style={{ justifyContent: "space-between" }}>
                         {userAPI && chapa(userAPI)} <FaEdit />
                     </div>
