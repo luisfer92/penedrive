@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.df51d276.chunk.css",
+    "main.js": "/static/js/main.ba115d46.chunk.js",
+    "main.js.map": "/static/js/main.ba115d46.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b355130f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b355130f.js.map",
+    "static/js/2.261a69ca.chunk.js": "/static/js/2.261a69ca.chunk.js",
+    "static/js/2.261a69ca.chunk.js.map": "/static/js/2.261a69ca.chunk.js.map",
+    "static/js/3.11626c8a.chunk.js": "/static/js/3.11626c8a.chunk.js",
+    "static/js/3.11626c8a.chunk.js.map": "/static/js/3.11626c8a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.df51d276.chunk.css.map": "/static/css/main.df51d276.chunk.css.map",
+    "static/js/2.261a69ca.chunk.js.LICENSE.txt": "/static/js/2.261a69ca.chunk.js.LICENSE.txt",
+    "static/media/box.63de4f0b.png": "/static/media/box.63de4f0b.png",
+    "static/media/cafetera.webp": "/static/media/cafetera.67ab1e7c.webp",
+    "static/media/camara.webp": "/static/media/camara.edc67465.webp",
+    "static/media/expositor.webp": "/static/media/expositor.c372634b.webp",
+    "static/media/exprimidora.webp": "/static/media/exprimidora.6fc8d82d.webp",
+    "static/media/freidora.webp": "/static/media/freidora.48d017bc.webp",
+    "static/media/grifo.webp": "/static/media/grifo.fcab3c7b.webp",
+    "static/media/harina.843657ac.png": "/static/media/harina.843657ac.png",
+    "static/media/heladera.webp": "/static/media/heladera.d1cb0178.webp",
+    "static/media/hielo.webp": "/static/media/hielo.7d8860e9.webp",
+    "static/media/horno.webp": "/static/media/horno.215bc88e.webp",
+    "static/media/impresora.webp": "/static/media/impresora.bf2b38b9.webp",
+    "static/media/kds.webp": "/static/media/kds.84a69c03.webp",
+    "static/media/lavavajillas.webp": "/static/media/lavavajillas.043e263d.webp",
+    "static/media/maria.webp": "/static/media/maria.e457ae01.webp",
+    "static/media/mesa.webp": "/static/media/mesa.f5bf8391.webp",
+    "static/media/microondas.webp": "/static/media/microondas.a64a7e3f.webp",
+    "static/media/tpv.webp": "/static/media/tpv.91cb0b04.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b355130f.js",
+    "static/js/2.261a69ca.chunk.js",
+    "static/css/main.df51d276.chunk.css",
+    "static/js/main.ba115d46.chunk.js"
+  ]
+}
